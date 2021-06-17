@@ -1,0 +1,48 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_contact/list
+
+
+    Example context (json):
+    {
+        'contact' : {
+    }
+}}
+<h1>{{# str }} template:information, mod_contact {{/ str }}</h1>
+<img src="{{{profile}}}" alt="Error" width="50" height="50">
+<input type="button" class="btn btn-primary" value="Edit contact" onclick="location.href='{{editurl}}' ">
+<table class="table">
+{{#contact}}
+  <tr>
+    <th>{{# str }} template:fields, mod_contact {{/ str }}</th>
+    <th>{{# str }} template:contact, mod_contact {{/ str }}</th>
+  </tr>
+  <tr>
+    <td>{{# str }} template:name, mod_contact {{/ str }}:</td>
+    <td>{{name}}</td>
+  </tr>
+  <tr>
+    <td>{{# str }} template:email, mod_contact {{/ str }}:</td>
+    <td>{{email}}</td>
+  </tr>
+  <tr>
+    <td>{{# str }} template:phone, mod_contact {{/ str }}:</td>
+    <td>{{phone}}</td>
+  </tr>
+ {{/contact}}
+</table>
